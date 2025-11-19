@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Desenvolvedor Front-end</title>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>
+            <button id="theme-toggle" title="Alternar tema" aria-label="Trocar tema">🌙</button>
+            Douglas Pereira - Desenvolvedor Front-end 
+        </h1>
+    </header>
+    <!-- Fim do Cabeçalho -->
+
+    <!-- Sobre mim -->
+     <main>
+    <section class="sobre">
+     <h2>
+        Sobre mim
+     </h2>
+     <figure>
+     <img src="Imagens/Captura de tela 2025-09-25 033142.png" alt="Minha foto">
+     <figcaption>Douglas Pereira</figcaption>
+     </figure>
+     <p>
+        Olá, me chamo Douglas, tenho 21 anos estou cursando faculdade de TI e ao longo desse tempo me tornei desenvolvedor front-end há 1 ano. Busco crescer como freelancer e futuramente atuar em grandes empresas da área de tecnologia, aprimorando minhas habilidades diariamente.
+     </p>
+     </section>
+     <!-- Fim do sobre mim -->
+
+     <!-- Minhas Skills -->
+      <section class="Skills">
+      <h2>
+        Skills
+      </h2>
+
+      <div class="Skills-icons">
+      <img src="PNG/html.png" alt="HTML" width="80" height="80">
+      <img src="PNG/css-3.png" alt="CSS" width="80" height="80">
+      <img src="PNG/js.png" alt="JS"  width="80" height="80">
+      </div>
+      </section>
+      
+      <!-- Fim das Skills  -->
+
+      <!-- Meus projetos -->
+       <section class="projetos">
+        <h2>
+            Projetos
+        </h2>
+        <p>
+            Futuramente irei colocar projetos.
+        </p>
+       </section>
+       </main>
+       <!-- Fim dos projetos  -->
+
+       <!-- Rodape -->
+      <footer>
+        <p>©2025 Douglas Pereira</p>
+        <p>Email: douglasticurriculo@gmail.com</p>
+      </footer>
+      <!-- Fim do Rodape -->
+
+      <!-- JavaScript -->
+      <script>
+        const btn= document.getElementById('theme-toggle');
+
+        btn.addEventListener('click', ()=>{
+            document.body.classList.toggle('light');
+            btn.textContent= document.body.classList.contains('light') ? '🌞' : '🌙';
+
+            // Salvar preferencia no navegador
+            localStorage.setItem('theme', document.body.classList.contains('light')? 'light' : 'dark');
+        })
+
+        // Manter tema salvo ao recarregar
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme= localStorage.getItem('theme');
+            if (savedTheme === 'light') { 
+            document.body.classList.add('light');
+            btn.textContent = '🌞';
+            }
+        });
+      </script>
+      <!-- Fim do JavaScript -->
+</body>
+</html>
